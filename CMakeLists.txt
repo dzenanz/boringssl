@@ -1,5 +1,5 @@
 cmake_minimum_required (VERSION 2.8.10)
-
+#cmake_policy(SET CMP0054 OLD)
 # Defer enabling C and CXX languages.
 project (BoringSSL NONE)
 
@@ -51,6 +51,7 @@ elseif(MSVC)
       "C4365" # '=' : conversion from 'size_t' to 'int',
               # signed/unsigned mismatch
       "C4389" # '!=' : signed/unsigned mismatch
+      "C4464" # relative include path contains '..'
       "C4510" # 'argument' : default constructor could not be generated
       "C4512" # 'argument' : assignment operator could not be generated
       "C4514" # 'function': unreferenced inline function has been removed
